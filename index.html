@@ -87,7 +87,9 @@
       <div class="grid">
         <div class="panel">
           <h3>ABOUT</h3>
-          <p>Ajimul Alam is a professional building contractor from Ludhiana, Punjab. Working since 1990, he leads <b>MAC Constructions (Master Ajimul Construction)</b>, providing top-quality civil, residential, and commercial construction services with trust and precision.</p>
+          <p id="about">
+MAC Constructions (Master Ajimul Construction) is a Ludhiana-based civil contracting firm led by <b>Ajimul Alam</b>. Since 1990, we have delivered <b>residential</b> and <b>commercial</b> projects across Punjab with an end-to-end approach — from <b>layout & RCC</b> to <b>brickwork, plaster, waterproofing, tiling, electrical and plumbing fit-outs</b>. Our focus is on <b>structural quality</b>, <b>transparent costing</b>, on-site supervision and <b>on-time handover</b>. Call us for a site visit and a free estimate.
+</p>
         </div>
         <div class="panel">
           <h3>SERVICES</h3>
@@ -200,6 +202,24 @@
       <!-- Floating Contact Buttons -->
       <a href="https://wa.me/919872269486?text=Hello%20MAC%20Constructions%2C%20I%20saw%20your%20website%20and%20would%20like%20to%20discuss%20a%20project." aria-label="WhatsApp us" title="WhatsApp Us" style="position:fixed;right:18px;bottom:88px;z-index:9999;background:#25D366;color:#fff;padding:14px 18px;border-radius:999px;text-decoration:none;font-weight:800;box-shadow:0 10px 25px rgba(0,0,0,.35);display:flex;align-items:center;gap:8px">💬 WhatsApp</a>
       <a href="tel:+919872269486" aria-label="Call now" title="Call Now" style="position:fixed;right:18px;bottom:24px;z-index:9999;background:linear-gradient(135deg,#ffb703,#fb8500);color:#0f1115;padding:14px 18px;border-radius:999px;text-decoration:none;font-weight:800;box-shadow:0 10px 25px rgba(0,0,0,.35);display:flex;align-items:center;gap:8px">📞 Call Now</a>
+<!-- Single QR Code panel -->
+<div class="panel" style="margin:0 22px 22px;text-align:center">
+  <h3>SCAN QR CODE</h3>
+  <div id="qrmc" style="display:inline-block;margin-top:8px"></div>
+  <div class="small" style="margin-top:8px">Scan to open our website</div>
+</div>
+<script>
+  try{
+    if(document.getElementById('qrmc')){
+      new QRCode(document.getElementById('qrmc'),{
+        text:'https://macconstructions.github.io/macconstructions/',
+        width:160,height:160,
+        colorDark:'#000000',colorLight:'#ffffff',
+        correctLevel:QRCode.CorrectLevel.H
+      });
+    }
+  }catch(e){}
+</script>
 
       <div class="footer">
         <div class="small">© <span id="year"></span> MAC Constructions • Ludhiana, Punjab</div>
@@ -266,6 +286,7 @@
   </script>
 </body>
 </html>
+
 
 
 
