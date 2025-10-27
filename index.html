@@ -31,17 +31,15 @@
 
     section{max-width:1200px;margin:60px auto;padding:0 40px;}
     h2{color:var(--primary);font-size:28px;margin-bottom:16px;}
-    .about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;}
-    .card{background:var(--card);border-radius:16px;padding:20px;box-shadow:0 4px 20px rgba(0,0,0,.05);transition:transform .2s,box-shadow .2s;}
-    .card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.1);}
-    .card h3{margin:10px 0;color:var(--accent);font-size:18px;}
-    .card p{color:var(--muted);font-size:15px;}
-    .card img{width:100%;border-radius:12px;margin-bottom:10px;}
 
-    .stats{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-top:40px;}
-    .stat{background:var(--primary);color:#fff;padding:20px 28px;border-radius:14px;min-width:180px;text-align:center;box-shadow:0 6px 25px rgba(0,0,0,.15);}
-    .stat h4{font-size:26px;margin-bottom:4px;}
-    .stat span{font-size:13px;opacity:.9}
+    /* ===== Gallery Slider (ADD) ===== */
+    .gallery{max-width:1200px;margin:60px auto;padding:0 40px}
+    .slider{position:relative;overflow:hidden;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.12);background:#000}
+    .slides{display:flex;width:100%;transition:transform .6s ease}
+    .slides img{width:100%;flex:0 0 100%;object-fit:cover;aspect-ratio:16/9}
+    .slider .dotwrap{position:absolute;left:0;right:0;bottom:10px;display:flex;gap:6px;justify-content:center}
+    .slider .dot{width:8px;height:8px;border-radius:999px;background:#ffffff70}
+    .slider .dot.active{background:#fff}
 
     footer{margin-top:80px;background:#111827;color:#9ca3af;text-align:center;padding:20px;font-size:14px;}
 
@@ -62,6 +60,7 @@
     </nav>
   </header>
 
+  <!-- HERO -->
   <div class="hero">
     <div class="hero-content">
       <h1>Building Excellence Since 1990</h1>
@@ -71,100 +70,105 @@
     <img src="./house1.jpg" alt="Modern House">
   </div>
 
-  <script>
-  (function(){
-    const sliderEl = document.querySelector('#macSlider');
-    if(!sliderEl) return;
+  <!-- GALLERY (ALL YOUR PHOTOS) -->
+  <section id="gallery" class="gallery">
+    <h2>Photo Gallery</h2>
+    <div class="slider" id="macSlider">
+      <div class="slides">
+        <!-- Houses -->
+        <img src="./house1.jpg" alt="House 1">
+        <img src="./house2.jpg" alt="House 2">
+        <img src="./house3.jpg" alt="House 3">
+        <img src="./house4.jpg" alt="House 4">
+        <img src="./house5.jpg" alt="House 5">
+        <img src="./house6.jpg" alt="House 6">
+        <img src="./house7.jpg" alt="House 7">
+        <!-- Sites -->
+        <img src="./site1.jpg"  alt="Site 1">
+        <img src="./site2.jpg"  alt="Site 2">
+        <img src="./site3.jpg"  alt="Site 3">
+        <img src="./site4.jpg"  alt="Site 4">
+      </div>
+      <div class="dotwrap"></div>
+    </div>
+  </section>
 
-    const track = sliderEl.querySelector('.slides');
-    const slides = Array.from(track.children);
-    const dotWrap = sliderEl.querySelector('.dotwrap');
-
-    // Auto dots based on images
-    dotWrap.innerHTML = '';
-    slides.forEach((_, idx) => {
-      const d = document.createElement('div');
-      d.className = 'dot' + (idx===0 ? ' active' : '');
-      d.addEventListener('click', () => go(idx));
-      dotWrap.appendChild(d);
-    });
-    const dots = Array.from(dotWrap.children);
-
-    let i = 0, total = slides.length, timer;
-
-    function go(n){
-      i = (n + total) % total;
-      track.style.transform = `translateX(-${i*100}%)`;
-      dots.forEach((d,idx)=>d.classList.toggle('active', idx===i));
-      reset();
-    }
-    function next(){ go(i+1); }
-    function reset(){
-      clearInterval(timer);
-      timer = setInterval(next, 3500);
-    }
-    reset();
-  })();
-</script>
-
-<section style="max-width:1200px;margin:60px auto;padding:0 40px;">
-  <h2>Project Videos</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
-    <iframe loading="lazy" src="https://www.youtube.com/embed/3zbiqZBOEpg" title="Video 1" frameborder="0" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.2)"></iframe>
-    <iframe loading="lazy" src="https://www.youtube.com/embed/m2-LqAZbUSg" title="Video 2" frameborder="0" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.2)"></iframe>
-    <iframe loading="lazy" src="https://www.youtube.com/embed/v_t25jUnVLo" title="Video 3" frameborder="0" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.2)"></iframe>
-    <iframe loading="lazy" src="https://www.youtube.com/embed/dIhym2S761E" title="Video 4" frameborder="0" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.2)"></iframe>
-    <iframe loading="lazy" src="https://www.youtube.com/embed/v4iH5axchgw" title="Video 5" frameborder="0" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.2)"></iframe>
-    <iframe loading="lazy" src="https://www.youtube.com/embed/eGDi_jKQpcw" title="Video 6" frameborder="0" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.2)"></iframe>
-    <iframe loading="lazy" src="https://www.youtube.com/embed/oJvHrk9t1fk" title="Video 7" frameborder="0" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.2)"></iframe>
-  </div>
-
-  <div style="text-align:center;margin-top:16px;">
-    <a href="https://youtube.com/@mac_construction?si=l4AwcdYHjK1oylnf" target="_blank"
-       style="background:#ff0000;color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;">
-      🔴 Visit Our YouTube Channel
-    </a>
-  </div>
-</section>
+  <!-- YOUTUBE VIDEOS -->
+  <section style="max-width:1200px;margin:60px auto;padding:0 40px;">
+    <h2>Project Videos</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
+      <iframe loading="lazy" src="https://www.youtube.com/embed/3zbiqZBOEpg" title="Video 1" frameborder="0" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.2)"></iframe>
+      <iframe loading="lazy" src="https://www.youtube.com/embed/m2-LqAZbUSg" title="Video 2" frameborder="0" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.2)"></iframe>
+      <iframe loading="lazy" src="https://www.youtube.com/embed/v_t25jUnVLo" title="Video 3" frameborder="0" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.2)"></iframe>
+      <iframe loading="lazy" src="https://www.youtube.com/embed/dIhym2S761E" title="Video 4" frameborder="0" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.2)"></iframe>
+      <iframe loading="lazy" src="https://www.youtube.com/embed/v4iH5axchgw" title="Video 5" frameborder="0" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.2)"></iframe>
+      <iframe loading="lazy" src="https://www.youtube.com/embed/eGDi_jKQpcw" title="Video 6" frameborder="0" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.2)"></iframe>
+      <iframe loading="lazy" src="https://www.youtube.com/embed/oJvHrk9t1fk" title="Video 7" frameborder="0" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.2)"></iframe>
+    </div>
+    <div style="text-align:center;margin-top:16px;">
+      <a href="https://youtube.com/@mac_construction?si=l4AwcdYHjK1oylnf" target="_blank"
+         style="background:#ff0000;color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;">
+        🔴 Visit Our YouTube Channel
+      </a>
+    </div>
+  </section>
 
   <footer>
     © <script>document.write(new Date().getFullYear())</script> MAC Constructions — Designed with ❤️ in Ludhiana
   </footer>
+
   <!-- Floating Buttons -->
-<a href="https://wa.me/919872269486?text=Hello%20MAC%20Constructions%2C%20I%20saw%20your%20website%20and%20want%20to%20discuss%20a%20project."
-   aria-label="WhatsApp Us"
-   style="position:fixed;right:18px;bottom:88px;z-index:9999;background:#25D366;color:#fff;
-          padding:12px 16px;border-radius:999px;text-decoration:none;font-weight:700;
-          box-shadow:0 10px 25px rgba(0,0,0,.35);">
-  💬 WhatsApp
-</a>
+  <a href="https://wa.me/919872269486?text=Hello%20MAC%20Constructions%2C%20I%20saw%20your%20website%20and%20want%20to%20discuss%20a%20project."
+     aria-label="WhatsApp Us"
+     style="position:fixed;right:18px;bottom:88px;z-index:9999;background:#25D366;color:#fff;
+            padding:12px 16px;border-radius:999px;text-decoration:none;font-weight:700;
+            box-shadow:0 10px 25px rgba(0,0,0,.35);">
+    💬 WhatsApp
+  </a>
 
-<a href="tel:+919872269486"
-   aria-label="Call Now"
-   style="position:fixed;right:18px;bottom:28px;z-index:9999;background:linear-gradient(135deg,#ffb703,#fb8500);
-          color:#111;padding:12px 16px;border-radius:999px;text-decoration:none;font-weight:800;
-          box-shadow:0 10px 25px rgba(0,0,0,.35);">
-  📞 Call Now
-</a>
-<script>
-  (function(){
-    const slider = document.querySelector('#macSlider .slides');
-    const dots   = document.querySelectorAll('#macSlider .dot');
-    if(!slider) return;
-    let i = 0, total = slider.children.length;
+  <a href="tel:+919872269486"
+     aria-label="Call Now"
+     style="position:fixed;right:18px;bottom:28px;z-index:9999;background:linear-gradient(135deg,#ffb703,#fb8500);
+            color:#111;padding:12px 16px;border-radius:999px;text-decoration:none;font-weight:800;
+            box-shadow:0 10px 25px rgba(0,0,0,.35);">
+    📞 Call Now
+  </a>
 
-    function go(n){
-      i = (n+total)%total;
-      slider.style.transform = `translateX(-${i*100}%)`;
-      dots.forEach((d,idx)=>d.classList.toggle('active', idx===i));
-    }
-    setInterval(()=>go(i+1), 3500);
-  })();
-</script>
+  <!-- SINGLE slider script (auto dots + autoplay) -->
+  <script>
+    (function(){
+      const sliderEl = document.querySelector('#macSlider');
+      if(!sliderEl) return;
 
+      const track = sliderEl.querySelector('.slides');
+      const slides = Array.from(track.children);
+      const dotWrap = sliderEl.querySelector('.dotwrap');
+
+      // Make dots automatically
+      dotWrap.innerHTML = '';
+      slides.forEach((_, idx) => {
+        const d = document.createElement('div');
+        d.className = 'dot' + (idx===0 ? ' active' : '');
+        d.addEventListener('click', () => go(idx));
+        dotWrap.appendChild(d);
+      });
+      const dots = Array.from(dotWrap.children);
+
+      let i = 0, total = slides.length, timer;
+
+      function go(n){
+        i = (n + total) % total;
+        track.style.transform = `translateX(-${i*100}%)`;
+        dots.forEach((d,idx)=>d.classList.toggle('active', idx===i));
+        reset();
+      }
+      function next(){ go(i+1); }
+      function reset(){
+        clearInterval(timer);
+        timer = setInterval(next, 3500);
+      }
+      reset();
+    })();
+  </script>
 </body>
 </html>
-
-
-
-
