@@ -71,21 +71,42 @@
     <img src="./house1.jpg" alt="Modern House">
   </div>
 
-  <section>
-    <h2>Our Projects</h2>
-    <div class="about-grid">
-      <div class="card"><img src="./house2.jpg"><h3>Luxury Facade</h3><p>Modern villa with lighting and marble panel detailing.</p></div>
-      <div class="card"><img src="./house3.jpg"><h3>Contemporary Design</h3><p>Stylish front elevation featuring texture & wooden accents.</p></div>
-      <div class="card"><img src="./site1.jpg"><h3>Site Work in Progress</h3><p>Expert supervision during RCC and brickwork phase.</p></div>
-      <div class="card"><img src="./site2.jpg"><h3>Finishing Stage</h3><p>Electrical and plastering nearing completion under supervision.</p></div>
-    </div>
+  <script>
+  (function(){
+    const sliderEl = document.querySelector('#macSlider');
+    if(!sliderEl) return;
 
-    <div class="stats">
-      <div class="stat"><h4>35+</h4><span>Years Experience</span></div>
-      <div class="stat"><h4>500+</h4><span>Projects Completed</span></div>
-      <div class="stat"><h4>100%</h4><span>Client Satisfaction</span></div>
-    </div>
-  </section>
+    const track = sliderEl.querySelector('.slides');
+    const slides = Array.from(track.children);
+    const dotWrap = sliderEl.querySelector('.dotwrap');
+
+    // Auto dots based on images
+    dotWrap.innerHTML = '';
+    slides.forEach((_, idx) => {
+      const d = document.createElement('div');
+      d.className = 'dot' + (idx===0 ? ' active' : '');
+      d.addEventListener('click', () => go(idx));
+      dotWrap.appendChild(d);
+    });
+    const dots = Array.from(dotWrap.children);
+
+    let i = 0, total = slides.length, timer;
+
+    function go(n){
+      i = (n + total) % total;
+      track.style.transform = `translateX(-${i*100}%)`;
+      dots.forEach((d,idx)=>d.classList.toggle('active', idx===i));
+      reset();
+    }
+    function next(){ go(i+1); }
+    function reset(){
+      clearInterval(timer);
+      timer = setInterval(next, 3500);
+    }
+    reset();
+  })();
+</script>
+
 <section style="max-width:1200px;margin:60px auto;padding:0 40px;">
   <h2>Project Videos</h2>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
@@ -143,6 +164,7 @@
 
 </body>
 </html>
+
 
 
 
