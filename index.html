@@ -3,295 +3,92 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MAC Constructions — Building Contractor in Ludhiana, Punjab</title>
-<meta name="description" content="MAC Constructions Ludhiana — Trusted building contractor since 1990. Contact Ajimul Alam for residential and commercial construction projects in Punjab.">
-<meta name="keywords" content="MAC Constructions, Ludhiana contractor, Punjab construction, Ajimul Alam, building contractor, renovation, house builder, MAC Construction projects">
-<meta name="author" content="Ajimul Alam">
-<meta property="og:title" content="MAC Constructions — Ludhiana Building Contractor">
-<meta property="og:description" content="MAC Constructions Ludhiana — Trusted building and renovation contractor since 1990.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://macconstructions.github.io/macconstructions/">
-<meta property="og:image" content="https://macconstructions.github.io/macconstructions/house1.jpg">
-
-  <meta name="google-site-verification" content="Nx6Qqs5NbJM5iqj7Eqt8sWTsfDCcEif15kaYJCDLOjQ" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+  <title>MAC Constructions — Ludhiana</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#0e1116; --card:#141a22; --muted:#93a1b5; --text:#e7edf6; --accent:#ffb703; --accent2:#fb8500; --ring:rgba(251,133,0,.35);
-      --radius:18px;
+    :root {
+      --bg:#f8fafc;
+      --text:#1a1d21;
+      --primary:#0071e3;
+      --accent:#ff8c42;
+      --card:#fff;
+      --muted:#6b7280;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Apple Color Emoji;letter-spacing:.2px;background:
-      radial-gradient(1200px 600px at 100% -10%, rgba(255,183,3,.18), transparent 50%),
-      radial-gradient(900px 500px at -10% 100%, rgba(251,133,0,.14), transparent 60%),
-      var(--bg);color:var(--text);display:grid;place-items:center;padding:20px}
-    .wrap{width:min(940px,95vw)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
 
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);
-      border-radius:var(--radius);box-shadow:0 20px 60px rgba(0,0,0,.45);overflow:hidden}
+    header{display:flex;justify-content:space-between;align-items:center;padding:18px 40px;background:linear-gradient(90deg,var(--primary),#00aaff);color:#fff;box-shadow:0 4px 20px rgba(0,0,0,.1);}
+    header .logo img{height:45px;margin-right:12px;vertical-align:middle;}
+    header nav a{color:#fff;text-decoration:none;margin-left:18px;font-weight:500;transition:opacity .2s}
+    header nav a:hover{opacity:.8}
 
-    .top{display:grid;grid-template-columns:120px 1fr auto;gap:18px;align-items:center;padding:22px}
-    .avatar{width:120px;height:120px;border-radius:24px;background:linear-gradient(135deg,#2a3342,#1b2230);border:1px solid rgba(255,255,255,.08);
-      display:grid;place-items:center;font-weight:800;font-size:40px}
-    .title{display:flex;flex-direction:column;gap:4px}
-    .name{font-size:clamp(22px,3.2vw,34px);font-weight:800}
-    .role{color:var(--muted);font-weight:600}
-    .row{display:flex;gap:10px;flex-wrap:wrap}
-    .btn{appearance:none;border:none;background:#1b2331;color:var(--text);padding:12px 14px;border-radius:12px;cursor:pointer;font-weight:700;
-      border:1px solid rgba(255,255,255,.08);box-shadow:inset 0 -3px 0 rgba(0,0,0,.25)}
-    .btn.acc{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#0f1115}
+    .hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px;padding:60px 40px;max-width:1200px;margin:auto;}
+    .hero img{width:100%;border-radius:20px;box-shadow:0 8px 25px rgba(0,0,0,.1);}
+    .hero-content h1{font-size:36px;margin-bottom:12px;color:var(--primary);}
+    .hero-content p{color:var(--muted);margin-bottom:24px;font-size:16px;}
+    .hero-content .btn{background:var(--accent);color:#fff;padding:12px 24px;border:none;border-radius:8px;text-decoration:none;font-weight:600;box-shadow:0 5px 20px rgba(255,140,66,.3);transition:all .2s}
+    .hero-content .btn:hover{transform:translateY(-2px);}
 
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:0 22px 22px}
-    .panel{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px}
-    .panel h3{margin:0 0 10px 0;font-size:14px;letter-spacing:.4px;color:var(--muted)}
-    .panel p{margin:0;color:var(--text);line-height:1.6}
-    .tags{display:flex;flex-wrap:wrap;gap:8px}
-    .tag{padding:8px 10px;border-radius:999px;background:#212b3a;border:1px solid rgba(255,255,255,.08);font-size:13px}
+    section{max-width:1200px;margin:60px auto;padding:0 40px;}
+    h2{color:var(--primary);font-size:28px;margin-bottom:16px;}
+    .about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;}
+    .card{background:var(--card);border-radius:16px;padding:20px;box-shadow:0 4px 20px rgba(0,0,0,.05);transition:transform .2s,box-shadow .2s;}
+    .card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.1);}
+    .card h3{margin:10px 0;color:var(--accent);font-size:18px;}
+    .card p{color:var(--muted);font-size:15px;}
+    .card img{width:100%;border-radius:12px;margin-bottom:10px;}
 
-    .links{display:flex;gap:10px;flex-wrap:wrap}
-    .link{display:inline-flex;gap:8px;align-items:center;padding:10px 12px;border-radius:12px;background:#1b2331;border:1px solid rgba(255,255,255,.08);text-decoration:none;color:var(--text);font-weight:600}
+    .stats{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-top:40px;}
+    .stat{background:var(--primary);color:#fff;padding:20px 28px;border-radius:14px;min-width:180px;text-align:center;box-shadow:0 6px 25px rgba(0,0,0,.15);}
+    .stat h4{font-size:26px;margin-bottom:4px;}
+    .stat span{font-size:13px;opacity:.9}
 
-    .footer{display:flex;justify-content:space-between;align-items:center;padding:14px 22px;border-top:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02)}
-    .small{color:var(--muted);font-size:12px}
+    footer{margin-top:80px;background:#111827;color:#9ca3af;text-align:center;padding:20px;font-size:14px;}
 
-    .qr-container{text-align:center;margin-top:10px}
-    #qrcode{display:inline-block;margin-top:10px}
-
-    @media (max-width:740px){
-      .top{grid-template-columns:80px 1fr;grid-auto-rows:auto}
-      .avatar{width:80px;height:80px;border-radius:16px;font-size:26px}
-      .grid{grid-template-columns:1fr}
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr;text-align:center;}
+      .hero-content h1{font-size:30px;}
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="card" id="card">
-      <div class="top">
-        <div class="avatar" id="avatar">AA</div>
-        <div class="title">
-          <div class="name">Ajimul Alam</div>
-          <div class="role">Contractor — Master Ajimul Construction (MAC)</div>
-          <div class="row">
-            <a class="btn" href="mailto:ajimulalam.765@gmail.com">📧 Email</a>
-            <a class="btn" href="tel:+919872269486">📞 Call</a>
-            <button class="btn acc" id="vcardBtn">↧ Save Contact (.vcf)</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid">
-        <div class="panel">
-          <h3>ABOUT</h3>
-          <p id="about">
-MAC Constructions (Master Ajimul Construction) is a Ludhiana-based civil contracting firm led by <b>Ajimul Alam</b>. Since 1990, we have delivered <b>residential</b> and <b>commercial</b> projects across Punjab with an end-to-end approach — from <b>layout & RCC</b> to <b>brickwork, plaster, waterproofing, tiling, electrical and plumbing fit-outs</b>. Our focus is on <b>structural quality</b>, <b>transparent costing</b>, on-site supervision and <b>on-time handover</b>. Call us for a site visit and a free estimate.
-</p>
-        </div>
-        <div class="panel">
-          <h3>SERVICES</h3>
-          <div class="tags">
-            <span class="tag">Building Construction</span>
-            <span class="tag">Renovation & Interiors</span>
-            <span class="tag">Residential Projects</span>
-            <span class="tag">Commercial Buildings</span>
-            <span class="tag">Civil Work Expertise</span>
-          </div>
-        </div>
-        <div class="panel">
-          <h3>CONTACT INFO</h3>
-          <p><b>Phone:</b> 9872269486 / 7031447786<br>
-          <b>Email:</b> ajimulalam.765@gmail.com<br>
-          <b>Location:</b> Ludhiana, Punjab, India<br>
-          <b>Since:</b> 1990</p>
-        </div>
-        <div class="panel">
-          <h3>BUSINESS LINK</h3>
-          <div class="links">
-            <a class="link" href="mailto:ajimulalam.765@gmail.com">📩 Send Email</a>
-            <a class="link" href="tel:+919872269486">📞 Call Now</a>
-          </div>
-          <div class="qr-container">
-            <a href="./about.html" style="color:#fff;text-decoration:none;margin-left:12px;">About Us</a>
-
-          
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ajimul Alam Contractor — MAC Constructions</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
-  <style>
-    :root{
-      --bg:#0e1116; --card:#141a22; --muted:#93a1b5; --text:#e7edf6; --accent:#ffb703; --accent2:#fb8500; --ring:rgba(251,133,0,.35);
-      --radius:18px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Apple Color Emoji;letter-spacing:.2px;background:
-      radial-gradient(1200px 600px at 100% -10%, rgba(255,183,3,.18), transparent 50%),
-      radial-gradient(900px 500px at -10% 100%, rgba(251,133,0,.14), transparent 60%),
-      var(--bg);color:var(--text);display:grid;place-items:center;padding:20px}
-    .wrap{width:min(940px,95vw)}
-
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);
-      border-radius:var(--radius);box-shadow:0 20px 60px rgba(0,0,0,.45);overflow:hidden}
-
-    .top{display:grid;grid-template-columns:120px 1fr auto;gap:18px;align-items:center;padding:22px}
-    .avatar{width:120px;height:120px;border-radius:24px;background:linear-gradient(135deg,#2a3342,#1b2230);border:1px solid rgba(255,255,255,.08);
-      display:grid;place-items:center;font-weight:800;font-size:40px}
-    .title{display:flex;flex-direction:column;gap:4px}
-    .name{font-size:clamp(22px,3.2vw,34px);font-weight:800}
-    .role{color:var(--muted);font-weight:600}
-    .row{display:flex;gap:10px;flex-wrap:wrap}
-    .btn{appearance:none;border:none;background:#1b2331;color:var(--text);padding:12px 14px;border-radius:12px;cursor:pointer;font-weight:700;
-      border:1px solid rgba(255,255,255,.08);box-shadow:inset 0 -3px 0 rgba(0,0,0,.25)}
-    .btn.acc{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#0f1115}
-
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:0 22px 22px}
-    .panel{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px}
-    .panel h3{margin:0 0 10px 0;font-size:14px;letter-spacing:.4px;color:var(--muted)}
-    .panel p{margin:0;color:var(--text);line-height:1.6}
-    .tags{display:flex;flex-wrap:wrap;gap:8px}
-    .tag{padding:8px 10px;border-radius:999px;background:#212b3a;border:1px solid rgba(255,255,255,.08);font-size:13px}
-
-    .links{display:flex;gap:10px;flex-wrap:wrap}
-    .link{display:inline-flex;gap:8px;align-items:center;padding:10px 12px;border-radius:12px;background:#1b2331;border:1px solid rgba(255,255,255,.08);text-decoration:none;color:var(--text);font-weight:600}
-
-    .footer{display:flex;justify-content:space-between;align-items:center;padding:14px 22px;border-top:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02)}
-    .small{color:var(--muted);font-size:12px}
-
-    .qr-container{text-align:center;margin-top:10px}
-    #qrcode{display:inline-block;margin-top:10px}
-
-    @media (max-width:740px){
-      .top{grid-template-columns:80px 1fr;grid-auto-rows:auto}
-      .avatar{width:80px;height:80px;border-radius:16px;font-size:26px}
-      .grid{grid-template-columns:1fr}
-
-      <!-- YouTube Videos Section (with titles) -->
-      <div class="panel" style="margin:0 22px 22px">
-        <h3>PROJECT VIDEOS</h3>
-        <style>
-          .video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-          .vid{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,.35)}
-          .vid iframe{width:100%;aspect-ratio:9/16;display:block}
-          .cap{padding:8px 10px;font-size:13px;color:#e7edf6;opacity:.9}
-          @media (prefers-color-scheme: light){.cap{color:#0f1320;opacity:.8}}
-        </style>
-        <div class="video-grid">
-          <div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/3zbiqZBOEpg" title="MAC Constructions Video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="cap">Project Video 1</div></div>
-          <div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/m2-LqAZbUSg" title="MAC Constructions Video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="cap">Project Video 2</div></div>
-          <div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/v_t25jUnVLo" title="MAC Constructions Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="cap">Project Video 3</div></div>
-          <div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/dIhym2S761E" title="MAC Constructions Video 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="cap">Project Video 4</div></div>
-          <div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/v4iH5axchgw" title="MAC Constructions Video 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="cap">Project Video 5</div></div>
-          <div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/eGDi_jKQpcw" title="MAC Constructions Video 6" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="cap">Project Video 6</div></div>
-          <div class="vid"><iframe loading="lazy" src="https://www.youtube.com/embed/oJvHrk9t1fk" title="MAC Constructions Video 7" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="cap">Project Video 7</div></div>
-        </div>
-        <div class="row" style="justify-content:center;margin-top:14px">
-          <a class="btn acc" href="https://youtube.com/@mac_construction?si=l4AwcdYHjK1oylnf" target="_blank" rel="noopener">🔴 Visit Our YouTube Channel</a>
-        </div>
-      </div>
-
-      <!-- Floating Contact Buttons -->
-      <a href="https://wa.me/919872269486?text=Hello%20MAC%20Constructions%2C%20I%20saw%20your%20website%20and%20would%20like%20to%20discuss%20a%20project." aria-label="WhatsApp us" title="WhatsApp Us" style="position:fixed;right:18px;bottom:88px;z-index:9999;background:#25D366;color:#fff;padding:14px 18px;border-radius:999px;text-decoration:none;font-weight:800;box-shadow:0 10px 25px rgba(0,0,0,.35);display:flex;align-items:center;gap:8px">💬 WhatsApp</a>
-      <a href="tel:+919872269486" aria-label="Call now" title="Call Now" style="position:fixed;right:18px;bottom:24px;z-index:9999;background:linear-gradient(135deg,#ffb703,#fb8500);color:#0f1115;padding:14px 18px;border-radius:999px;text-decoration:none;font-weight:800;box-shadow:0 10px 25px rgba(0,0,0,.35);display:flex;align-items:center;gap:8px">📞 Call Now</a>
-<!-- Single QR Code panel -->
-<div class="panel" style="margin:0 22px 22px;text-align:center">
-  <h3>SCAN QR CODE</h3>
-  <div id="qrmc" style="display:inline-block;margin-top:8px"></div>
-  <div class="small" style="margin-top:8px">Scan to open our website</div>
-</div>
-<script>
-  try{
-    if(document.getElementById('qrmc')){
-      new QRCode(document.getElementById('qrmc'),{
-        text:'https://macconstructions.github.io/macconstructions/',
-        width:160,height:160,
-        colorDark:'#000000',colorLight:'#ffffff',
-        correctLevel:QRCode.CorrectLevel.H
-      });
-    }
-  }catch(e){}
-</script>
-
-      <div class="footer">
-        <div class="small">© <span id="year"></span> MAC Constructions • Ludhiana, Punjab</div>
-        <div class="small">Built with ❤️ by Master Ajimul Construction</div>
-      </div>
+  <header>
+    <div class="logo">
+      <img src="./logo.png" alt="MAC Logo"> MAC Constructions
     </div>
+    <nav>
+      <a href="mailto:ajimulalam.765@gmail.com">Contact</a>
+      <a href="tel:+919872269486">Call</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Building Excellence Since 1990</h1>
+      <p>MAC Constructions (Master Ajimul Construction) is a trusted Ludhiana-based firm delivering high-quality residential and commercial construction projects across Punjab.</p>
+      <a href="tel:+919872269486" class="btn">📞 Get a Quote</a>
+    </div>
+    <img src="./house1.jpg" alt="Modern House">
   </div>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Generate QR code
-    new QRCode(document.getElementById('qrcode'), {
-      text: 'https://macconstructions.in',
-      width: 128,
-      height: 128,
-      colorDark: '#000000',
-      colorLight: '#ffffff',
-      correctLevel: QRCode.CorrectLevel.H
-    });
-
-    document.getElementById('vcardBtn').addEventListener('click',()=>{
-      const vcf = `BEGIN:VCARD\nVERSION:3.0\nN:Alam;Ajimul;;;\nFN:Ajimul Alam\nTITLE:Contractor — MAC Constructions\nORG:Master Ajimul Construction\nTEL;TYPE=CELL:9872269486\nTEL;TYPE=CELL:7031447786\nEMAIL;TYPE=INTERNET:ajimulalam.765@gmail.com\nADR;TYPE=WORK:;;Ludhiana, Punjab, India;;;;\nURL:https://macconstructions.in\nNOTE:Construction services since 1990\nEND:VCARD`;
-      const blob=new Blob([vcf],{type:'text/vcard'});
-      const a=document.createElement('a');
-      a.href=URL.createObjectURL(blob);
-      a.download='Ajimul_Alam_MAC_Constructions.vcf';
-      document.body.appendChild(a);a.click();a.remove();
-      setTimeout(()=>URL.revokeObjectURL(a.href),1000);
-    });
-  </script>
-</body>
-</html>
-
-      <div class="footer">
-        <div class="small">© <span id="year"></span> MAC Constructions • Ludhiana, Punjab</div>
-        <div class="small">Built with ❤️ by Master Ajimul Construction</div>
-      </div>
+  <section>
+    <h2>Our Projects</h2>
+    <div class="about-grid">
+      <div class="card"><img src="./house2.jpg"><h3>Luxury Facade</h3><p>Modern villa with lighting and marble panel detailing.</p></div>
+      <div class="card"><img src="./house3.jpg"><h3>Contemporary Design</h3><p>Stylish front elevation featuring texture & wooden accents.</p></div>
+      <div class="card"><img src="./site1.jpg"><h3>Site Work in Progress</h3><p>Expert supervision during RCC and brickwork phase.</p></div>
+      <div class="card"><img src="./site2.jpg"><h3>Finishing Stage</h3><p>Electrical and plastering nearing completion under supervision.</p></div>
     </div>
-  </div>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    <div class="stats">
+      <div class="stat"><h4>35+</h4><span>Years Experience</span></div>
+      <div class="stat"><h4>500+</h4><span>Projects Completed</span></div>
+      <div class="stat"><h4>100%</h4><span>Client Satisfaction</span></div>
+    </div>
+  </section>
 
-    // Generate QR code
-    new QRCode(document.getElementById('qrcode'), {
-      text: 'https://macconstructions.in',
-      width: 128,
-      height: 128,
-      colorDark: '#000000',
-      colorLight: '#ffffff',
-      correctLevel: QRCode.CorrectLevel.H
-    });
-
-    document.getElementById('vcardBtn').addEventListener('click',()=>{
-      const vcf = `BEGIN:VCARD\nVERSION:3.0\nN:Alam;Ajimul;;;\nFN:Ajimul Alam\nTITLE:Contractor — MAC Constructions\nORG:Master Ajimul Construction\nTEL;TYPE=CELL:9872269486\nTEL;TYPE=CELL:7031447786\nEMAIL;TYPE=INTERNET:ajimulalam.765@gmail.com\nADR;TYPE=WORK:;;Ludhiana, Punjab, India;;;;\nURL:https://macconstructions.in\nNOTE:Construction services since 1990\nEND:VCARD`;
-      const blob=new Blob([vcf],{type:'text/vcard'});
-      const a=document.createElement('a');
-      a.href=URL.createObjectURL(blob);
-      a.download='Ajimul_Alam_MAC_Constructions.vcf';
-      document.body.appendChild(a);a.click();a.remove();
-      setTimeout(()=>URL.revokeObjectURL(a.href),1000);
-    });
-  </script>
+  <footer>
+    © <script>document.write(new Date().getFullYear())</script> MAC Constructions — Designed with ❤️ in Ludhiana
+  </footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
